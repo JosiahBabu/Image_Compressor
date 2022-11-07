@@ -1,0 +1,28 @@
+Log is recorded on 11/07/2022, 15:03:26 Script run by:U4PC16
+Log is recorded on 11/07/2022, 15:03:31 Script run by:U4PC16
+Converted File Name | Original Size(Mb) |   Converted Size(Kb) |  Converted Dimension|
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Log is recorded on 11/07/2022, 15:05:22 Script run by:U4PC16
+Converted File Name | Original Size(Mb) |   Converted Size(Kb) |  Converted Dimension|
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\bedroom-spa-deluxe-room.jpg  15.234800338745117 292.51953125 1523X2284
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\dsc01418.jpg  7.201878547668457 168.51953125 889X1333
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\dsc03032.jpg  7.2308349609375 135.0830078125 860X1289
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\jmm_4710.jpg  7.8249359130859375 481.861328125 1637X2453
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\SampleJPGImage_10mbmb.jpg  10.019603729248047 916.5771484375 1716X2574
+Log is recorded on 11/07/2022, 15:07:11 Script run by:U4PC16
+Converted File Name | Original Size(Mb) |   Converted Size(Kb) |  Converted Dimension|
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\bedroom-spa-deluxe-room.jpg  15.234800338745117 293.015625 2284X1523
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\dsc01418.jpg  7.201878547668457 167.232421875 1333X889
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\dsc03032.jpg  7.2308349609375 132.806640625 1289X860
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\jmm_4710.jpg  7.8249359130859375 480.82421875 2453X1637
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\SampleJPGImage_10mbmb.jpg  10.019603729248047 917.060546875 2574X1716
+Log is recorded on 11/07/2022, 15:07:41 Script run by:U4PC16
+Converted File Name | Original Size(Mb) |   Converted Size(Kb) |  Converted Dimension|
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\bedroom-spa-deluxe-room.jpg  15.234800338745117 292.51953125 1523X2284
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\dsc01418.jpg  7.201878547668457 168.51953125 889X1333
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\dsc03032.jpg  7.2308349609375 135.0830078125 860X1289
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\jmm_4710.jpg  7.8249359130859375 481.861328125 1637X2453
+C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input\SampleJPGImage_10mbmb.jpg  10.019603729248047 916.5771484375 1716X2574
