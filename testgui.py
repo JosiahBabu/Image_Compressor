@@ -24,18 +24,37 @@ utton = ttk.Button(root, text="Choose Folder", command=browseFile).pack(ipadx=5,
 # keep the window dis
 """
 import tkinter as tk
-from tkinter import TclError, ttk
+from tkinter import TclError, ttk,StringVar
 from tkinter import filedialog
 import Image_reducer_test as irt
+
 Source_Path="Select source path"
 Output_path="Select Output path"
+
 def browseFile():
     filename=filedialog.askdirectory(initialdir="/",title="Select the destination")
     Source_Path=filename
+    keyword.delete(0,tk.END)
+    keyword.insert(0,Source_Path)
 def browseFileOut():
-    filename=filedialog.askdirectory(initialdir="/",title="Select the destination")
+    filename=filedialog.askdirectory(initialdir="/",title="Select the output destination")
     Output_path=filename
-    print(Output_path)
+    replacement.delete(0,tk.END)
+    replacement.insert(0,Output_path)
+
+
+def update_list_box_gui():
+    print("finished")
+    return listbox
+
+
+def update_lbl(val):
+   manual['text'] = "Scale at " + val
+
+
+def run_script():
+    irt.main()
+
 
 def create_input_frame(container):
 
@@ -46,18 +65,20 @@ def create_input_frame(container):
     frame.columnconfigure(0, weight=3)
 
     ttk.Label(frame, text='Source Folder:').grid(column=0, row=0, sticky=tk.W)
+    global keyword
     keyword = ttk.Entry(frame, width=30)
     keyword.focus()
     keyword.grid(column=1, row=0, sticky=tk.W)
 
 
     ttk.Label(frame, text='Destination Folder:').grid(column=0, row=1, sticky=tk.W)
+    global replacement
     replacement = ttk.Entry(frame, width=30)
     replacement.focus()
     replacement.grid(column=1, row=1, sticky=tk.W)
 
     for widget in frame.winfo_children():
-        widget.grid(padx=5, pady=5)
+        widget.grid(padx=3, pady=3)
 
     return frame
 
@@ -72,7 +93,7 @@ def create_button_frame(container):
 
 
     for widget in frame.winfo_children():
-        widget.grid(padx=5, pady=5)
+        widget.grid(padx=3, pady=3)
 
     return frame
 
@@ -82,10 +103,36 @@ def create_submit_button(container):
 
     frame = ttk.Frame(container)
     frame.columnconfigure(0, weight=1)
-    ttk.Button(frame, text='Submit',command=irt.main).grid(column=0, row=1)
+    ttk.Button(frame, text='Submit',command=run_script).grid(column=0, row=1)
     for widget in frame.winfo_children():
-        widget.grid(padx=5, pady=5)
+        widget.grid(padx=3, pady=3)
 
+    return frame
+
+
+def create_list_box(container):
+    frame=ttk.Frame(container)
+    frame.columnconfigure(0,weight=1)
+    global listbox
+    listbox = tk.Listbox(frame,height=6,selectmode=tk.EXTENDED)
+    for widget in frame.winfo_children():
+        widget.grid(padx=3, pady=3)
+    return frame
+
+
+
+def create_scale_quality(container):
+
+    frame=ttk.Frame(container)
+    frame.columnconfigure(0,weight=1)
+    num = StringVar()
+    ttk.Label(frame,text="quality").grid(column=0,row=0,sticky='we')
+    ttk.Label(frame, textvariable=num).grid(column=1, row=0, sticky='we')
+    manual = ttk.Label(frame)
+    manual.grid(column=0, row=1, sticky='we')
+    scale = ttk.Scale(frame, orient='horizontal', length=100, from_=1, to=100,variable=num,)
+    for widget in frame.winfo_children():
+        widget.grid(padx=3, pady=3)
     return frame
 
 
@@ -113,6 +160,12 @@ def create_main_window():
     submit_button_frame = create_submit_button(root)
     submit_button_frame.grid(column=1, row=2)
 
+    scale_view = create_scale_quality(root)
+    scale_view.grid(column=0, row=3)
+
+
+    listbox_view = create_list_box(root)
+    listbox_view.grid(column=0, row=4)
 
     root.mainloop()
 

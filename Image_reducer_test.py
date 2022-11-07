@@ -3,13 +3,15 @@ import PIL
 import datetime
 from PIL import Image
 import platform
-path="C:/Users/adon.augustin/Documents/New folder/python/reduce_image_size/test_protein"
-output_path="C:/Users/adon.augustin/Documents/New folder/python/reduce_image_size/output"     #"test_protein/saved_files"
+import testgui
+path="C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/input"
+output_path="C:/Users/adon.augustin/Documents/New folder/image_compressor/Image_Compressor/output"     #"test_protein/saved_files"
 notopenfileslog=[]
 sizebeforefilelog=[]
 sizeafterfilelog=[]
 openfileslog=[]
 resizedimension=[]
+
 #len = 0
 
 def getUser():
@@ -40,6 +42,7 @@ def SizetoMb(size_of_file):
 def SizetoKb(size_of_file):
     sizeinkb=size_of_file/(1024)
     return sizeinkb
+
 def ResizeFiles():
     try:
         for filename in os.listdir(path):
@@ -47,6 +50,7 @@ def ResizeFiles():
                 #break
 
             print(filename)
+
             if filename.endswith(".jpg") or filename.endswith(".png"):
                 print(os.path.join(path, filename))
                 filepath=os.path.join(path, filename)
@@ -70,6 +74,7 @@ def ResizeFiles():
                     sizeafterfilelog.append(SizetoKb(os.path.getsize(output_path+'/'+filename)))
                     #len+=1
                     print("A file found in ",filepath)
+
 
                     continue
             else:
