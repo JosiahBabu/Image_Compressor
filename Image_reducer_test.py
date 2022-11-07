@@ -11,6 +11,7 @@ sizebeforefilelog=[]
 sizeafterfilelog=[]
 openfileslog=[]
 resizedimension=[]
+quality=80
 
 #len = 0
 
@@ -43,11 +44,14 @@ def SizetoKb(size_of_file):
     sizeinkb=size_of_file/(1024)
     return sizeinkb
 
+def updatequality(quality):
+    print("quality from irt",quality,type(quality))
 def ResizeFiles():
     try:
         for filename in os.listdir(path):
             #if(len==1):
                 #break
+
 
             print(filename)
 
@@ -67,7 +71,7 @@ def ResizeFiles():
                     rr=int(r/3)
                     cc=int(c/3)
                     resized_image = rot_img.resize((rr,cc))
-                    resized_image.save(output_path+'/'+filename, 'JPEG', quality=70)
+                    resized_image.save(output_path+'/'+filename, 'JPEG', quality=80)
                     print("resized_width:",rr,"resized_height",cc)
                     resizedimension.append(str(rr)+"X"+str(cc))
                     sizebeforefilelog.append(sizeinmb)
@@ -84,7 +88,11 @@ def ResizeFiles():
                print("Exception thrown. path does not exist.")
                input('press any key?\n')
 
+
+
+
 def main():
+
     user=getUser()
     CheckLogFile(user)
     ResizeFiles()

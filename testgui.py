@@ -1,30 +1,6 @@
-"""import tkinter as tk
-from tkinter import ttk
-from tkinter import filedialog
 
-def browseFile():
-    filename=filedialog.askdirectory(initialdir="/",
-
-                                        title="Select the destination",
-                                        )
-    message.configure(text="Selected Folder"+filename)
-root = tk.Tk()
-
-# place a label on the root window
-root.title('Size Reducer')
-root.geometry('600x400+50+50')
-root.resizable(0, 0)
-root.attributes('-topmost', 1)
-root.iconbitmap('icon123.ico')
-
-message = tk.Label(root, text="Hello, World!")
-message.pack()
-ttk.Label(root, text='Themed Label').pack()
-utton = ttk.Button(root, text="Choose Folder", command=browseFile).pack(ipadx=5,ipady=5,expand=True)
-# keep the window dis
-"""
 import tkinter as tk
-from tkinter import TclError, ttk,StringVar
+from tkinter import TclError, ttk,StringVar,IntVar
 from tkinter import filedialog
 import Image_reducer_test as irt
 
@@ -49,7 +25,9 @@ def update_list_box_gui():
 
 
 def update_lbl(val):
-   manual['text'] = "Scale at " + val
+   #manual['text'] = "Scale at " + val
+   irt.updatequality(int(val))
+  
 
 
 def run_script():
@@ -125,14 +103,17 @@ def create_scale_quality(container):
 
     frame=ttk.Frame(container)
     frame.columnconfigure(0,weight=1)
-    num = StringVar()
-    ttk.Label(frame,text="quality").grid(column=0,row=0,sticky='we')
+    global num
+    num = IntVar()
+    ttk.Label(frame,text="quality :").grid(column=0,row=0,sticky='we')
     ttk.Label(frame, textvariable=num).grid(column=1, row=0, sticky='we')
     manual = ttk.Label(frame)
     manual.grid(column=0, row=1, sticky='we')
-    scale = ttk.Scale(frame, orient='horizontal', length=100, from_=1, to=100,variable=num,)
+    scale = tk.Scale(frame, orient='horizontal', length=200, from_=10, to=80,variable=num,command=update_lbl)
+
     for widget in frame.winfo_children():
         widget.grid(padx=3, pady=3)
+
     return frame
 
 
@@ -157,12 +138,12 @@ def create_main_window():
     button_frame = create_button_frame(root)
     button_frame.grid(column=1, row=0)
 
-    submit_button_frame = create_submit_button(root)
-    submit_button_frame.grid(column=1, row=2)
 
     scale_view = create_scale_quality(root)
-    scale_view.grid(column=0, row=3)
+    scale_view.grid(column=0, row=2)
 
+    submit_button_frame = create_submit_button(root)
+    submit_button_frame.grid(column=1, row=3)
 
     listbox_view = create_list_box(root)
     listbox_view.grid(column=0, row=4)
